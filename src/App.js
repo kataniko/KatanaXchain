@@ -6,8 +6,8 @@ import Homepage from './Pages/Homepage';
 import CoinPage from './Pages/CoinPage';
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(( ) => ({
-  App : {
+const useStyles = makeStyles(() => ({
+  App: {
     backgroundColor: '#14161a',
     color: "white",
     minHeight: "100vh",
@@ -15,14 +15,14 @@ const useStyles = makeStyles(( ) => ({
 }))
 
 function App() {
-  const classes = useStyles ();
+  const classes = useStyles();
 
   return (
     <BrowserRouter>
       <div className={classes.App}>
-        <Header/>
-        <Route path="/" component={ Homepage } exact />
-        <Route path="/coins/:id" component={ CoinPage }  />
+        <Header />
+        <Route path="/" component={Homepage} exact />
+        <Route path="/coins/:id" component={CoinPage} />
       </div>
     </BrowserRouter>
   );

@@ -24,68 +24,83 @@ const useStyles = makeStyles(() => ({
         flexDirection: "column",
         justifyContent: "center",
         textAlign: "center",
-    
+
     },
 
     carousel: {
         height: "50%",
         display: "flex",
         alignItems: "center",
-      },
-    
+    },
+
 }));
 
 function Banner() {
     const classes = useStyles();
-  return (
-    <div className={classes.banner}>
-        <Container className={classes.bannerContent}>
-            <div className={classes.tagline}>
-                <Typography 
-                       variant="h2"
-                       style={{
-                           fontWeight:"bold",
-                           marginBottom: 15,
-                           fontFamily: "Montserrat",
-                       }}
-                   >
-                   KatanaXchain
-               
-                   </Typography>
-                   <Typography
-                       variant="subtitle2"
-                       style={{
-                           color: "darkgrey",
-                           textTransform: "capitalize",
-                           fontFamily: "Chakra Petch",
-                           marginBottom: 20,
-                   }}
-                   >
-                   Everything you need in one place
-                   </Typography>
-            </div>
-            <motion.div 
-            initial={{
-                 z: 0,
-                opacity: 0,
-                scale: 0.8
-            }}
-            animate={{
-                x: 0,
-                opacity: 1,
-                scale: 1,
-            }}
-    
-            transition={{
-                duration: 2 ,
-            }}>                  
-            
-            <Carousel />
-            
-            </motion.div> 
-        </Container>
-    </div>
-  );
+    return (
+        <div className={classes.banner}>
+            <Container className={classes.bannerContent}>
+                <motion.div
+                    initial={{
+                        z: 0,
+                        opacity: 0,
+                        scale: 0.8
+                    }}
+                    animate={{
+                        x: 0,
+                        opacity: 1,
+                        scale: 1,
+                    }}
+
+                    transition={{
+                        duration: 2,
+                    }}
+                    className={classes.tagline}>
+                    <Typography
+                        variant="h2"
+                        style={{
+                            fontWeight: "bold",
+                            marginBottom: 15,
+                            fontFamily: "Montserrat",
+                        }}
+                    >
+                        KatanaXchain
+
+                    </Typography>
+                    <Typography
+                        variant="subtitle2"
+                        style={{
+                            color: "darkgrey",
+                            textTransform: "capitalize",
+                            fontFamily: "Chakra Petch",
+                            marginBottom: 20,
+                        }}
+                    >
+                        Everything you need in one place
+                    </Typography>
+                </motion.div>
+                <motion.div
+                    initial={{
+                        z: 0,
+                        opacity: 0,
+                        scale: 0.8
+                    }}
+                    animate={{
+                        x: 0,
+                        opacity: 1,
+                        scale: 1,
+                    }}
+
+                    transition={{
+                        duration: 2,
+                    }}>
+
+                    <Carousel />
+
+                </motion.div>
+            </Container>
+        </div>
+    );
 }
 
 export default Banner;
