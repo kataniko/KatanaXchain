@@ -68,12 +68,12 @@ function Banner() {
             initial={{
                  z: 0,
                 opacity: 0,
-                scale: 1.5
+                scale: 0.8
             }}
             animate={{
                 x: 0,
                 opacity: 1,
-                scale: 0.9,
+                scale: 1,
             }}
     
             transition={{

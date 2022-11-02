@@ -5,10 +5,11 @@ import { CryptoState } from '../CryptoContext';
 import { motion } from "framer-motion";
 
 
+
 const useStyles = makeStyles(() => ({ 
     title : {
       flex: 1,
-      color: "#FF1E1E",
+      color: "white",
       fontFamily:"Montserrat",
       fontWeight: "Bold",
       cursor: "pointer",
@@ -86,8 +87,8 @@ const  Header = () => {
               onChange={(e) => setCurrency(e.target.value)}
               >
 
-                <MenuItem value={"USD"}>USD</MenuItem>
-                <MenuItem value={"EUR"}>EUR</MenuItem>
+                <MenuItem  value={"USD"}>USD</MenuItem>
+                <MenuItem  value={"EUR"}>EUR</MenuItem>
           
             </Select>
           </motion.div>
