@@ -7,9 +7,14 @@ import { TrendingCoins } from "../../config/api";
 import { CryptoState } from "../../CryptoContext";
 
 
+
+export function numberWithCommas(x){
+  return x.toString().replace().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
-  const { currency } = CryptoState();
+  const { currency , symbol } = CryptoState();
 
   const fetchTrendingCoins = async () => {
     const { data } = await axios.get(TrendingCoins(currency));
@@ -65,6 +70,10 @@ const Carousel = () => {
             {coin?.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
+
+        <span style={{fontSize: 22 , fontWeight: 500}}>
+          {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
+        </span>
       </Link>
     );
   });
@@ -90,6 +99,7 @@ const Carousel = () => {
         responsive={responsive}
         items={items}
         autoPlay
+        in
       />
     </div>
   );

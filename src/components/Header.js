@@ -31,22 +31,7 @@ const  Header = () => {
   
   return (
     <ThemeProvider theme={darkTheme}>
-     <motion.div 
-       initial = {{
-        z: -500,
-        opacity : 0,
-        scale:0.5,
-      }}
-      
-      animate={{
-        x: 0,
-        opacity: 1,
-        scale: 1,
-      }}
-      
-      transition={{
-        duration: 1.5 ,
-      }}> 
+     <div > 
       <AppBar color='transparent' position='static'>
        <Container>
           <Toolbar>
@@ -54,9 +39,14 @@ const  Header = () => {
               className={classes.title}
               variant="h5">
               <motion.div 
+              initial={{
+                x: -800,
+                opacity: 0,
+                scale: 0.5
+              }}
 
               animate={{
-                x: -100,
+                x: 0,
                 opacity: 1,
                 scale: 1,
               }}
@@ -68,25 +58,44 @@ const  Header = () => {
               </motion.div>
             </Typography>
 
-          <Select variant="outlined" 
-          style={{
-            width: 100,
-            height: 40,
-            marginRight: 15,
-          }}
-          value={currency}
-          onChange={(e) => setCurrency(e.target.value)}
-          >
-
-            <MenuItem value={"USD"}>USD</MenuItem>
-            <MenuItem value={"EUR"}>EUR</MenuItem>
           
-          </Select>
+          <motion.div 
+           initial={{
+            x: +800,
+            opacity: 0,
+            scale: 0.5
+          }}
+
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          
+          transition={{
+            duration: 2 ,
+          }}>
+            
+            <Select variant="outlined" 
+              style={{
+                width: 100,
+                height: 40,
+                marginRight: 15,
+              }}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+              >
+
+                <MenuItem value={"USD"}>USD</MenuItem>
+                <MenuItem value={"EUR"}>EUR</MenuItem>
+          
+            </Select>
+          </motion.div>
 
           </Toolbar>
         </Container>
       </AppBar>
-    </motion.div> 
+    </div> 
     </ThemeProvider>
   )
 }

@@ -1,6 +1,8 @@
 import { makeStyles, Container, Typography } from '@material-ui/core'
 import React from 'react'
 import Carousel from './Carousel';
+import { motion } from "framer-motion";
+
 
 
 
@@ -62,7 +64,25 @@ function Banner() {
                    Everything you need in one place
                    </Typography>
             </div>
-          <Carousel />
+            <motion.div 
+            initial={{
+                 z: 0,
+                opacity: 0,
+                scale: 1.5
+            }}
+            animate={{
+                x: 0,
+                opacity: 1,
+                scale: 0.9,
+            }}
+    
+            transition={{
+                duration: 2 ,
+            }}>                  
+            
+            <Carousel />
+            
+            </motion.div> 
         </Container>
     </div>
   );
