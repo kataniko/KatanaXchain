@@ -3,18 +3,15 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { CryptoState } from '../CryptoContext';
 import { motion } from "framer-motion";
-import Button from './Button';
-
-
-
+import Button from '../components/Button';
 
 
 const useStyles = makeStyles(() => ({
-  
+
   title: {
     flex: 1,
     color: "black",
-    fontfamily: 'Island Moments', 
+    fontfamily: 'Island Moments',
     fontWeight: "bold",
     cursor: "pointer",
     textShadow: '0px 1px 10px red',
@@ -39,40 +36,17 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <div>
-        <AppBar color='transparent' position='static'>
-          <Container >
-            <Toolbar >
-              <Typography onClick={() => history.push("/")}
-                className={classes.title}
-                variant="h5">
-                <motion.div
-                  initial={{
-                    x: -800,
-                    opacity: 0,
-                    scale: 0.5,
-                  }}
-
-                  animate={{
-                    x: 0,
-                    opacity: 1,
-                    scale: 1,
-                  }}
-
-                  transition={{
-                    duration: 2,
-                  }}>
-            
-                    KatanaXchain
-                
-                </motion.div>
-              </Typography>
-
+      <AppBar color='transparent' position='static'>
+        <Container >
+          <Toolbar >
+            <Typography onClick={() => history.push("/")}
+              className={classes.title}
+              variant="h5">
               <motion.div
                 initial={{
-                  x: +800,
+                  x: -800,
                   opacity: 0,
-                  scale: 0.5
+                  scale: 0.5,
                 }}
 
                 animate={{
@@ -85,28 +59,49 @@ const Header = () => {
                   duration: 2,
                 }}>
 
-                <Select variant="outlined"
-                  style={{
-                    width: 100,
-                    height: 40,
-                    marginRight: 15,
-                    boxShadow: '1px 2px 9px red'
-                  }}
-                  value={currency}
-                  onChange={(e) => setCurrency(e.target.value)}
-                >
-
-                  <MenuItem value={"USD"}>USD</MenuItem>
-                  <MenuItem value={"EUR"}>EUR</MenuItem>
-
-                </Select><Button />
+                KatanaXchain
 
               </motion.div>
+            </Typography>
 
-            </Toolbar>
-          </Container>
-        </AppBar>
-      </div>
+            <motion.div
+              initial={{
+                x: +800,
+                opacity: 0,
+                scale: 0.5
+              }}
+
+              animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+
+              transition={{
+                duration: 2,
+              }}>
+
+              <Select variant="outlined"
+                style={{
+                  width: 100,
+                  height: 40,
+                  marginRight: 15,
+                  boxShadow: '1px 2px 9px red'
+                }}
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value)}
+              >
+
+                <MenuItem value={"USD"}>USD</MenuItem>
+                <MenuItem value={"EUR"}>EUR</MenuItem>
+
+              </Select><Button />
+
+            </motion.div>
+
+          </Toolbar>
+        </Container>
+      </AppBar>
     </ThemeProvider>
   )
 }
