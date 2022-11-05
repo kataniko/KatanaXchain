@@ -3,23 +3,30 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { CryptoState } from '../CryptoContext';
 import { motion } from "framer-motion";
+import Button from './Button';
+
+
 
 
 
 const useStyles = makeStyles(() => ({
+  
   title: {
     flex: 1,
     color: "white",
-    fontFamily: "Montserrat",
-    fontWeight: "Bold",
+    fontfamily: 'Island Moments', 
+    fontWeight: "bold",
     cursor: "pointer",
+    textShadow: '0px 1px 10px red',
   },
 }));
+
 
 const Header = () => {
   const classes = useStyles();
   const history = useHistory();
   const { currency, setCurrency } = CryptoState();
+
 
   const darkTheme = createTheme({
     palette: {
@@ -32,10 +39,10 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <div >
+      <div>
         <AppBar color='transparent' position='static'>
-          <Container>
-            <Toolbar>
+          <Container >
+            <Toolbar >
               <Typography onClick={() => history.push("/")}
                 className={classes.title}
                 variant="h5">
@@ -43,7 +50,7 @@ const Header = () => {
                   initial={{
                     x: -800,
                     opacity: 0,
-                    scale: 0.5
+                    scale: 0.5,
                   }}
 
                   animate={{
@@ -55,10 +62,11 @@ const Header = () => {
                   transition={{
                     duration: 2,
                   }}>
-                  KatanaXchain
+            
+                    KatanaXchain
+                
                 </motion.div>
               </Typography>
-
 
               <motion.div
                 initial={{
@@ -82,6 +90,7 @@ const Header = () => {
                     width: 100,
                     height: 40,
                     marginRight: 15,
+                    boxShadow: '1px 2px 9px red'
                   }}
                   value={currency}
                   onChange={(e) => setCurrency(e.target.value)}
@@ -90,7 +99,8 @@ const Header = () => {
                   <MenuItem value={"USD"}>USD</MenuItem>
                   <MenuItem value={"EUR"}>EUR</MenuItem>
 
-                </Select>
+                </Select><Button />
+
               </motion.div>
 
             </Toolbar>
@@ -100,6 +110,5 @@ const Header = () => {
     </ThemeProvider>
   )
 }
-
 
 export default Header

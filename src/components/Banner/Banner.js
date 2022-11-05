@@ -6,9 +6,12 @@ import { motion } from "framer-motion";
 
 
 
+
 const useStyles = makeStyles(() => ({
     banner: {
         backgroundImage: "url(./fototo.jfif)",
+        boxShadow: '2px 1px 10px red',
+        
     },
     bannerContent: {
         height: 400,
@@ -16,6 +19,7 @@ const useStyles = makeStyles(() => ({
         flexDirection: "column",
         paddingTop: 25,
         justifyContent: "space-around",
+        
     },
 
     tagline: {
@@ -24,11 +28,11 @@ const useStyles = makeStyles(() => ({
         flexDirection: "column",
         justifyContent: "center",
         textAlign: "center",
-
+        
     },
 
     carousel: {
-        height: "50%",
+        height: "80%",
         display: "flex",
         alignItems: "center",
     },
@@ -44,14 +48,14 @@ function Banner() {
                     initial={{
                         z: 0,
                         opacity: 0,
-                        scale: 0.8
+                        scale: 0.8,
                     }}
                     animate={{
                         x: 0,
                         opacity: 1,
-                        scale: 1,
+                        scale: 0.8,
                     }}
-
+                    
                     transition={{
                         duration: 2,
                     }}
@@ -60,10 +64,11 @@ function Banner() {
                         variant="h2"
                         style={{
                             fontWeight: "bold",
-                            marginBottom: 15,
+                            marginBottom: 12,
+                            marginTop: 12,
                             fontFamily: "Montserrat",
                         }}
-                    >
+                        >
                         KatanaXchain
 
                     </Typography>
@@ -74,8 +79,9 @@ function Banner() {
                             textTransform: "capitalize",
                             fontFamily: "Chakra Petch",
                             marginBottom: 20,
+                            textShadow: "",
                         }}
-                    >
+                        >
                         Everything you need in one place
                     </Typography>
                 </motion.div>
@@ -83,19 +89,17 @@ function Banner() {
                     initial={{
                         z: 0,
                         opacity: 0,
-                        scale: 0.8
+                        scale: 1,
                     }}
                     animate={{
                         x: 0,
                         opacity: 1,
                         scale: 1,
                     }}
-
+                    
                     transition={{
                         duration: 2,
-                    }}>
-
-                    <Carousel />
+                    }}><Carousel />
 
                 </motion.div>
             </Container>

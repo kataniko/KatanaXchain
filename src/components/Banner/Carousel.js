@@ -8,12 +8,13 @@ import { CryptoState } from "../../CryptoContext";
 
 
 
+
 export function numberWithCommas(x){
   return x.toString().replace().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const Carousel = () => {
-  const [trending, setTrending] = useState([]);
+  const  [trending, setTrending] = useState([]);
   const { currency , symbol } = CryptoState();
 
   const fetchTrendingCoins = async () => {
@@ -29,8 +30,9 @@ const Carousel = () => {
   }, [currency]);
 
   const useStyles = makeStyles((theme) => ({
+    
     carousel: {
-      height: "50%",
+      height: "80%",
       display: "flex",
       alignItems: "center",
     },
@@ -55,7 +57,8 @@ const Carousel = () => {
           src={coin?.image}
           alt={coin.name}
           height="80"
-          style={{ marginBottom: 10 }}
+          style={{ 
+            marginBottom: 10 }}
         />
         <span>
           {coin?.symbol}
@@ -99,7 +102,6 @@ const Carousel = () => {
         responsive={responsive}
         items={items}
         autoPlay
-        
 
       />
     </div>

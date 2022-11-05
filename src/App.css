@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Montserrat:wght@300;400;800&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -10,4 +10,6 @@
 a {
   text-decoration: none;
   color: gold;
-}
+} 
+
+
