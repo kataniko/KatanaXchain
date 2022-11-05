@@ -5,7 +5,6 @@ import Header from './components/Header';
 import Homepage from './Pages/Homepage';
 import CoinPage from './Pages/CoinPage';
 import { makeStyles } from '@material-ui/core';
-import { MoralisProvider } from "react-moralis";
 
 
 const useStyles = makeStyles(() => ({
@@ -24,16 +23,12 @@ function  App() {
 
   return (
     <BrowserRouter className="box-border scroll-smooth m-0 p-0">
-      <MoralisProvider
-        serverUrl='https://gqasdf4tkkiu.usemoralis.com:2053/server'
-        appId='TL0YJzCoVXgYv0fMKfzmgD52UaoaMllZI1DxTJWJ'
-      >
         <div className={classes.App}>
             <Header />
           <Route path="/" component={Homepage} exact />
           <Route path="/coins/:id" component={CoinPage} />
         </div>
-      </MoralisProvider>
+      
     </BrowserRouter>
   );
 }

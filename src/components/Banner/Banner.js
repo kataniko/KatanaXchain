@@ -4,9 +4,6 @@ import Carousel from './Carousel';
 import { motion } from "framer-motion";
 
 
-
-
-
 const useStyles = makeStyles(() => ({
     banner: {
         backgroundImage: "url(./fototo.jfif)",
