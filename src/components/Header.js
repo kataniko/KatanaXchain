@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
   
   title: {
     flex: 1,
-    color: "white",
+    color: "black",
     fontfamily: 'Island Moments', 
     fontWeight: "bold",
     cursor: "pointer",
