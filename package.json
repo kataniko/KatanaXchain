@@ -38,7 +38,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test"
-},
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -56,5 +56,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-loader": "^4.0.2"
   }
 }
