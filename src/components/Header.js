@@ -44,7 +44,7 @@ const Header = () => {
               variant="h5">
               <motion.div
                 initial={{
-                  x: -800,
+                  x: -801,
                   opacity: 0,
                   scale: 0.5,
                 }}
