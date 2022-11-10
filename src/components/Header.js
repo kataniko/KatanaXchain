@@ -3,8 +3,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { CryptoState } from '../CryptoContext';
 import { motion } from "framer-motion";
-import Button from './Button';
-import shadows from '@material-ui/core/styles/shadows';
+
 
 
 
