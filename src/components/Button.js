@@ -11,8 +11,16 @@ function Button () {
 
   if(!isAuthenticated){
     return(
-      <div>
-        <button onClick={authenticate}>Connect</button>
+      <div >
+        <button style={{
+                width: 100,
+                height: 40,
+                color: "white",
+                backgroundColor:"transparent",
+                boxShadow: '1px 2px 9px red',
+                cursor: 'pointer',
+                
+              }} onClick={authenticate}>Connect</button>
       </div>
     )
   }

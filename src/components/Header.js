@@ -95,8 +95,25 @@ const Header = () => {
                 <MenuItem value={"USD"}>USD</MenuItem>
                 <MenuItem value={"EUR"}>EUR</MenuItem>
 
-              </Select><Button />
+              </Select>
+            </motion.div>
+            <motion.div
+              initial={{
+                x: +800,
+                opacity: 0,
+                scale: 0.5
+              }}
 
+              animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+
+              transition={{
+                duration: 2,
+              }}>
+              <Button variant="outlined" />
             </motion.div>
 
           </Toolbar>
