@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { CryptoState } from '../CryptoContext';
 import { motion } from "framer-motion";
 import Button from './Button';
+import shadows from '@material-ui/core/styles/shadows';
 
 
 
@@ -14,10 +15,9 @@ const useStyles = makeStyles(() => ({
   title: {
     flex: 1,
     color: "white",
-    fontfamily: 'Island Moments', 
-    fontWeight: "bold",
+    fontfamily: 'Island Moments',
     cursor: "pointer",
-    textShadow: '0px 1px 10px red',
+    
   },
 }));
 
@@ -44,8 +44,8 @@ const Header = () => {
           <Container >
             <Toolbar >
               <Typography onClick={() => history.push("/")}
-                className={classes.title}
-                variant="h5">
+                style={{flex: 1,textShadow: "1px 2px 9px red" ,color: "white",cursor: "pointer",fontFamily:"Island Moments"}}
+                variant="h3">
                 <motion.div
                   initial={{
                     x: -800,
@@ -99,7 +99,7 @@ const Header = () => {
                   <MenuItem value={"USD"}>USD</MenuItem>
                   <MenuItem value={"EUR"}>EUR</MenuItem>
 
-                </Select><Button />
+                </Select>
 
               </motion.div>
 
