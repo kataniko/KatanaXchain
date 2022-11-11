@@ -61,18 +61,18 @@ function Banner() {
                     <Typography
                         variant="h1"
                         style={{
-                            fontSize: 125,
                             marginBottom: 12,
                             marginTop: 12,
                             fontFamily: "Island Moments",
-                            textShadow: "1px 2px 9px black"
+                            textShadow: "1px 2px 9px black",
+                            textAlign: "center"
                         }}
                         >
                         KatanaXchain
 
                     </Typography>
                     <Typography
-                        variant="h6"
+                        variant="subtitle1"
                         style={{
                             color: "white",
                             fontFamily: "Prompt",

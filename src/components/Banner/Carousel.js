@@ -83,7 +83,7 @@ const Carousel = () => {
 
   const responsive = {
     0:{
-      items: 2,
+      items: 1,
     },
     512: {
       items: 4,
@@ -93,7 +93,7 @@ const Carousel = () => {
   return (
     <div className={classes.carousel}>
       <AliceCarousel
-        
+        f
         infinite
         autoPlayInterval={1000}
         animationDuration={1500}
