@@ -52,7 +52,7 @@ const CoinsTable = () => {
               }}
 
               transition={{
-                duration: 2,
+                duration: 1.5,
               }}>
             <Typography variant='h6' style={{textShadow: "1px 2px 9px black" , margin: 18,font: "bold",fontFamily:"Prompt"}}>
             Crypto Prices by Market Cap

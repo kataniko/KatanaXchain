@@ -57,7 +57,7 @@ const Header = () => {
                   }}
 
                   transition={{
-                    duration: 2,
+                    duration: 1.5,
                   }}>
 
                 KX
@@ -79,7 +79,7 @@ const Header = () => {
               }}
 
               transition={{
-                duration: 2,
+                duration: 1.5,
               }}>
 
               <Select variant="outlined"
@@ -119,7 +119,7 @@ const Header = () => {
               }}
 
               transition={{
-                duration: 2,
+                duration: 1.5,
               }}>
              
               <Button styles={classes.title} />

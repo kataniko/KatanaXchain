@@ -52,7 +52,7 @@ function Banner() {
         }}
         
         transition={{
-            duration: 2,
+            duration: 1.5,
         }} className={classes.banner}>
             <Container className={classes.bannerContent}>
                 <motion.div
