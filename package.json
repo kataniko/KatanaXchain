@@ -15,7 +15,6 @@
     "framer-motion": "4.1.17",
     "magic-sdk": "7.0.0",
     "moralis": "^2.7.1",
-    "next": "^12.1.2",
     "react": "^18.0.2",
     "react-alice-carousel": "^2.5.1",
     "react-chartjs-2": "^3.0.4",
@@ -23,9 +22,9 @@
     "react-html-parser": "^2.0.2",
     "react-moralis": "^1.4.2",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^1.0.1",
-    "web3uikit": "^1.0.4",
-    "react-scripts": "^5.0.1"
+    "web3uikit": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
