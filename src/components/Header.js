@@ -41,7 +41,7 @@ const Header = () => {
           <Toolbar >
             <Typography onClick={() => history.push("/")}
               className={classes.title}
-              variant="h5">
+              variant="h6">
               <motion.div
                 initial={{
                   x: -800,
