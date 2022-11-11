@@ -15,6 +15,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: "bold",
     cursor: "pointer",
     textShadow: '0px 1px 10px green',
+    
   },
 }));
 
@@ -36,11 +37,11 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color='transparent' position='static'>
+      <AppBar  color='transparent' position='static'>
         <Container >
           <Toolbar >
             <Typography onClick={() => history.push("/")}
-                style={{flex: 1,textShadow: "1px 2px 9px green" ,color: "white",cursor: "pointer",fontFamily:"Island Moments"}}
+                style={{flex: 1,textShadow: "0px 0px 15px green" ,color: "white",cursor: "pointer",fontFamily:"Island Moments"}}
                 variant="h3">
                 <motion.div
                   initial={{
@@ -74,7 +75,7 @@ const Header = () => {
               animate={{
                 x: 0,
                 opacity: 1,
-                scale: 1,
+                scale: 0.9,
               }}
 
               transition={{
@@ -86,7 +87,14 @@ const Header = () => {
                   width: 100,
                   height: 41,
                   marginRight: 15,
-                  boxShadow: '1px 2px 9px green'
+                  boxShadow: '1px 2px 9px green',
+                  fontFamily: "Prompt",
+                  fontWeight: "bold",
+                  borderStyle: "solid",
+                  borderColor: "green",
+                  borderWidth: "1px",
+                  borderRadius: "4px",
+                  
                 }}
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
@@ -101,19 +109,21 @@ const Header = () => {
               initial={{
                 x: +800,
                 opacity: 0,
-                scale: 0.5
+                scale: 1
               }}
 
               animate={{
                 x: 0,
                 opacity: 1,
-                scale: 1,
+                scale: 0.9,
               }}
 
               transition={{
                 duration: 2,
               }}>
+             
               <Button styles={classes.title} />
+              
             </motion.div>
 
           </Toolbar>

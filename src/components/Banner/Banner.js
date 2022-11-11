@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
         flexDirection: "column",
         paddingTop: 25,
         justifyContent: "space-around",
+        imageRendering: "100%"
         
     },
 
@@ -39,32 +40,32 @@ const useStyles = makeStyles(() => ({
 function Banner() {
     const classes = useStyles();
     return (
-        <div className={classes.banner}>
+        <motion.div initial={{
+            z: 0,
+            opacity: 0,
+            scale: 0.8,
+        }}
+        animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+        }}
+        
+        transition={{
+            duration: 2,
+        }} className={classes.banner}>
             <Container className={classes.bannerContent}>
                 <motion.div
-                    initial={{
-                        z: 0,
-                        opacity: 0,
-                        scale: 0.8,
-                    }}
-                    animate={{
-                        x: 0,
-                        opacity: 1,
-                        scale: 0.8,
-                    }}
-                    
-                    transition={{
-                        duration: 2,
-                    }}
+                   
                     className={classes.tagline}>
                     <Typography
                         variant="h1"
                         style={{
-                            
+                            fontSize: 125,
                             marginBottom: 12,
                             marginTop: 12,
                             fontFamily: "Island Moments",
-                            textShadow: "1px 2px 9px green"
+                            textShadow: "1px 2px 9px black"
                         }}
                         >
                         KatanaXchain
@@ -83,25 +84,11 @@ function Banner() {
                         Everything you need in one place
                     </Typography>
                 </motion.div>
-                <motion.div
-                    initial={{
-                        z: 0,
-                        opacity: 0,
-                        scale: 1,
-                    }}
-                    animate={{
-                        x: 0,
-                        opacity: 1,
-                        scale: 1,
-                    }}
-                    
-                    transition={{
-                        duration: 2,
-                    }}><Carousel />
-
+                <motion.div>
+                        <Carousel />
                 </motion.div>
             </Container>
-        </div>
+        </motion.div>
     );
 }
 
