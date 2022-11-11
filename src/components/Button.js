@@ -17,9 +17,16 @@ function Button () {
                 height: 40,
                 color: "white",
                 backgroundColor:"transparent",
-                boxShadow: '1px 2px 9px red',
+                boxShadow: '1px 2px 9px green',
                 cursor: 'pointer',
+                borderStyle: "solid",
+                borderColor: "green",
+                borderWidth: "1px",
+                borderRadius: "4px",
+                fontFamily: "Prompt",
+                fontSize: "15px",
                 
+            
               }} onClick={authenticate}>Connect</button>
       </div>
     )

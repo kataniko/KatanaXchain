@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
     fontfamily: 'Island Moments',
     fontWeight: "bold",
     cursor: "pointer",
-    textShadow: '0px 1px 10px red',
+    textShadow: '0px 1px 10px green',
   },
 }));
 
@@ -40,26 +40,26 @@ const Header = () => {
         <Container >
           <Toolbar >
             <Typography onClick={() => history.push("/")}
-              className={classes.title}
-              variant="h6">
-              <motion.div
-                initial={{
-                  x: -800,
-                  opacity: 0,
-                  scale: 0.5,
-                }}
+                style={{flex: 1,textShadow: "1px 2px 9px green" ,color: "white",cursor: "pointer",fontFamily:"Island Moments"}}
+                variant="h3">
+                <motion.div
+                  initial={{
+                    x: -800,
+                    opacity: 0,
+                    scale: 0.5,
+                  }}
 
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  scale: 1,
-                }}
+                  animate={{
+                    x: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }}
 
-                transition={{
-                  duration: 2,
-                }}>
+                  transition={{
+                    duration: 2,
+                  }}>
 
-                KatanaXchain
+                KX
 
               </motion.div>
             </Typography>
@@ -86,7 +86,7 @@ const Header = () => {
                   width: 100,
                   height: 41,
                   marginRight: 15,
-                  boxShadow: '1px 2px 9px red'
+                  boxShadow: '1px 2px 9px green'
                 }}
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
@@ -113,7 +113,7 @@ const Header = () => {
               transition={{
                 duration: 2,
               }}>
-              <Button variant="outlined" />
+              <Button styles={classes.title} />
             </motion.div>
 
           </Toolbar>

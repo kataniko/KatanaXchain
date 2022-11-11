@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 const useStyles = makeStyles(() => ({
     banner: {
-        backgroundImage: "url(./fototo.jfif)",
-        boxShadow: '2px 1px 10px red',
-        
+        backgroundImage: "url(./greenoca.jpeg)",
+        boxShadow: '2px 1px 10px green',
+       
     },
     bannerContent: {
         height: 400,
@@ -58,25 +58,26 @@ function Banner() {
                     }}
                     className={classes.tagline}>
                     <Typography
-                        variant="h2"
+                        variant="h1"
                         style={{
-                            fontWeight: "bold",
+                            
                             marginBottom: 12,
                             marginTop: 12,
-                            fontFamily: "Montserrat",
+                            fontFamily: "Island Moments",
+                            textShadow: "1px 2px 9px green"
                         }}
                         >
                         KatanaXchain
 
                     </Typography>
                     <Typography
-                        variant="subtitle2"
+                        variant="h6"
                         style={{
-                            color: "darkgrey",
-                            textTransform: "capitalize",
-                            fontFamily: "Chakra Petch",
+                            color: "white",
+                            fontFamily: "Prompt",
+                            fontWeight: "bolder",
                             marginBottom: 20,
-                            textShadow: "",
+                            textShadow: "1px 2px 9px black",
                         }}
                         >
                         Everything you need in one place
