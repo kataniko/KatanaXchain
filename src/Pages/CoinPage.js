@@ -1,13 +1,12 @@
-import React from 'react';
-import axios from 'axios';
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { SingleCoin } from '../config/api';
-import { CryptoState } from '../CryptoContext';
-import CoinInfo from '../components/CoinInfo' ;
-import { LinearProgress, Typography } from '@material-ui/core';
-import ReactHtmlParser from 'react-html-parser';
-import { numberWithCommas } from '../components/CoinsTable';
+import { LinearProgress, makeStyles, Typography } from "@material-ui/core";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
+import CoinInfo from "../components/CoinInfo";
+import { SingleCoin } from "../config/api";
+import { numberWithCommas } from "../components/CoinsTable";
+import { CryptoState } from "../CryptoContext";
 
 const CoinPage = () => {
     const { id } = useParams();
