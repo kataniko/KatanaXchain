@@ -20,9 +20,10 @@ const CoinPage = () => {
     };
 
 
-    useEffects(() => {
+    useEffect(() => {
         fetchCoin();
-    }, []);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
 
     const useStyles = makeStyles(() =>({
         container: {
