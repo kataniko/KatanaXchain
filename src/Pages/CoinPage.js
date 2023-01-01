@@ -25,7 +25,7 @@ const CoinPage = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
-    const useStyles = makeStyles(() =>({
+    const useStyles = makeStyles((theme) =>({
         container: {
             display: "flex",
             [theme.breakpoints.down("md")]: {
