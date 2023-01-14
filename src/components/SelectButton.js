@@ -1,34 +1,34 @@
-import { makeStyles } from '@material-ui/core'
-import React from 'react'
-import { Classnames } from 'react-alice-carousel'
+import { makeStyles } from "@material-ui/core";
 
-const SelectButton = ({ children }) => {
-const useStyles = makeStyles({
+const SelectButton = ({ children, selected, onClick }) => {
+  const useStyles = makeStyles({
+    
     selectbutton: {
-        border: "1px solid gold",
-        borderRadius: 5,
-        padding: 10,
-        paddingLeft: 20,
-        paddingRight: 20,
-        fontFamily: "Montserrat",
-        cursor: "pointer",
-        backgroundColor: selected ? "gold" : "",
-        color: selected ? "black" : "",
-        fontWeight: selected ? 700 : 500,
-        "&:hover": {
-          backgroundColor: "gold",
-          color: "black",
-        },
-        width: "22%",
+      border: "1px solid green",
+      borderRadius: 5,
+      padding: 10,
+      paddingLeft: 20,
+      paddingRight: 20,
+      fontFamily: "Montserrat",
+      cursor: "pointer",
+      backgroundColor: selected ? "green" : "",
+      color: selected ? "black" : "",
+      fontWeight: selected ? 700 : 500,
+      "&:hover": {
+        backgroundColor: "green",
+        color: "black",
       },
-});
+      width: "22%",
+    },
+  });
 
-const classes = useStyles();
+  const classes = useStyles();
 
   return (
-    <span onClick={onClick} className={Classnames.selectbutton}
-    >{children}</span>
-  )
-}
+    <span onClick={onClick} className={classes.selectbutton}>
+      {children}
+    </span>
+  );
+};
 
-export default SelectButton
+export default SelectButton;
