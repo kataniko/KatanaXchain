@@ -102,6 +102,7 @@ const Carousel = () => {
         responsive={responsive}
         items={items}
         autoPlay
+        
 
       />
     </div>

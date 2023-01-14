@@ -45,7 +45,7 @@ const Header = () => {
                 variant="h3">
                 <motion.div
                   initial={{
-                    x: -800,
+                    x: -810,
                     opacity: 0,
                     scale: 0.5,
                   }}
@@ -60,7 +60,7 @@ const Header = () => {
                     duration: 1.5,
                   }}>
 
-                KX
+                KXXX
 
               </motion.div>
             </Typography>
