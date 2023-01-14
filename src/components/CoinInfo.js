@@ -2,7 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { HistoricalChart } from "../config/api";
 import { Line } from "react-chartjs-2";
-import {CircularProgress,createTheme,makeStyles,ThemeProvider,} from "@material-ui/core";
+import {
+  CircularProgress,
+  createTheme,
+  makeStyles,
+  ThemeProvider,
+} from "@material-ui/core";
 import SelectButton from "./SelectButton";
 import { chartDays } from "../config/data";
 import { CryptoState } from "../CryptoContext";
@@ -11,29 +16,9 @@ const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
   const { currency } = CryptoState();
+  const [flag,setflag] = useState(false);
 
-  const fetchHistoricalData = async () => {
-    
-    const { data } = await axios.get(HistoricalChart(coin.id, days, currency))
-
-    setHistoricData(data.prices);
-  };
-
-  useEffect(() => {
-    fetchHistoricData();
-
-  }, [currency, data]);
-
-  const darkTheme = createTheme({
-    palette: {
-      primary: {
-        main: "#fff",
-      },
-      type: "dark",
-    },
-  });
-
-  const useStyles = makeStyles(() => ({
+  const useStyles = makeStyles((theme) => ({
     container: {
       width: "75%",
       display: "flex",
@@ -47,23 +32,43 @@ const CoinInfo = ({ coin }) => {
         marginTop: 0,
         padding: 20,
         paddingTop: 0,
-      }
-    }
-
+      },
+    },
   }));
+
   const classes = useStyles();
 
+  const fetchHistoricData = async () => {
+    const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
+    setflag(true);
+    setHistoricData(data.prices);
+  };
+
+  console.log(coin);
+
+  useEffect(() => {
+    fetchHistoricData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [days]);
+
+  const darkTheme = createTheme({
+    palette: {
+      primary: {
+        main: "#fff",
+      },
+      type: "dark",
+    },
+  });
 
   return (
     <ThemeProvider theme={darkTheme}>
       <div className={classes.container}>
-        {!historicData ? (
+        {!historicData | flag===false ? (
           <CircularProgress
             style={{ color: "gold" }}
             size={250}
             thickness={1}
           />
-
         ) : (
           <>
             <Line
@@ -74,7 +79,6 @@ const CoinInfo = ({ coin }) => {
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                       : `${date.getHours()}:${date.getMinutes()} AM`;
-
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
 
@@ -86,7 +90,6 @@ const CoinInfo = ({ coin }) => {
                   },
                 ],
               }}
-
               options={{
                 elements: {
                   point: {
@@ -96,28 +99,30 @@ const CoinInfo = ({ coin }) => {
               }}
             />
             <div
-            style={{
-              display: "flex",
-              marginTop: 20,
-              justifyContent: "space-around",
-              width: "100%",
-            }}
+              style={{
+                display: "flex",
+                marginTop: 20,
+                justifyContent: "space-around",
+                width: "100%",
+              }}
             >
-              {chartDays.map(day => (
+              {chartDays.map((day) => (
                 <SelectButton
-                  key={day.label}
-                  onClick={()=> setDays(day.value)}
+                  key={day.value}
+                  onClick={() => {setDays(day.value);
+                    setflag(false);
+                  }}
                   selected={day.value === days}
                 >
-                  </SelectButton>
+                  {day.label}
+                </SelectButton>
               ))}
             </div>
           </>
         )}
       </div>
-
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default CoinInfo
+export default CoinInfo;
