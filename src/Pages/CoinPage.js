@@ -9,6 +9,7 @@ import { numberWithCommas } from "../components/CoinsTable";
 import { CryptoState } from "../CryptoContext";
 
 const CoinPage = () => {
+  
   const { id } = useParams();
   const [coin, setCoin] = useState();
 

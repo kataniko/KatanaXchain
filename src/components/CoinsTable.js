@@ -44,11 +44,13 @@ export default function CoinsTable() {
             },
             fontFamily: "Montserrat",
         },
+
         pagination: {
             "& .MuiPaginationItem-root": {
                 color: "green",
             },
         },
+
     });
 
     const classes = useStyles();
@@ -64,10 +66,10 @@ export default function CoinsTable() {
     });
 
     const fetchCoins = async () => {
+
         setLoading(true);
         const { data } = await axios.get(CoinList(currency));
         console.log(data);
-
         setCoins(data);
         setLoading(false);
     };
@@ -173,10 +175,12 @@ export default function CoinsTable() {
                                                             </span>
                                                         </div>
                                                     </TableCell>
+
                                                     <TableCell align="right">
                                                         {symbol}{" "}
                                                         {numberWithCommas(row.current_price.toFixed(2))}
                                                     </TableCell>
+
                                                     <TableCell
                                                         align="right"
                                                         style={{
@@ -187,6 +191,7 @@ export default function CoinsTable() {
                                                         {profit && "+"}
                                                         {row.price_change_percentage_24h.toFixed(2)}%
                                                     </TableCell>
+
                                                     <TableCell align="right">
                                                         {symbol}{" "}
                                                         {numberWithCommas(
@@ -194,6 +199,7 @@ export default function CoinsTable() {
                                                         )}
                                                         M
                                                     </TableCell>
+
                                                 </TableRow>
                                             );
                                         })}

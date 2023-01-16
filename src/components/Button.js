@@ -1,7 +1,7 @@
 import React from 'react'
 import {useMoralis} from 'react-moralis'
 
-function Button () {
+const Button = () => {
 
   const{
     authenticate,
@@ -26,7 +26,6 @@ function Button () {
                 fontFamily: "Prompt",
                 fontSize: "15px",
                 
-            
               }} onClick={authenticate}>Connect</button>
       </div>
     )
@@ -42,3 +41,5 @@ function Button () {
 }
 
 export default Button
+
+

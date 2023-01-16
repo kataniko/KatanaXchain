@@ -14,12 +14,12 @@ export function numberWithCommas(x){
 }
 
 const Carousel = () => {
+
   const  [trending, setTrending] = useState([]);
   const { currency , symbol } = CryptoState();
 
   const fetchTrendingCoins = async () => {
     const { data } = await axios.get(TrendingCoins(currency));
-
     console.log(data);
     setTrending(data);
   };
@@ -49,6 +49,7 @@ const Carousel = () => {
   const classes = useStyles();
 
   const items = trending.map((coin) => {
+
     let profit = coin?.price_change_percentage_24h >= 0;
 
     return (
@@ -83,7 +84,7 @@ const Carousel = () => {
 
   const responsive = {
     0:{
-      items: 1,
+      items: 2,
     },
     512: {
       items: 4,

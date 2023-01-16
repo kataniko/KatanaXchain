@@ -5,7 +5,9 @@ import Header from './components/Header';
 import Homepage from './Pages/Homepage';
 import CoinPage from './Pages/CoinPage';
 import { makeStyles } from '@material-ui/core';
-import {MoralisProvider} from 'react-moralis'
+import {MoralisProvider} from 'react-moralis';
+
+
 
 
 const useStyles = makeStyles(() => ({
@@ -17,7 +19,6 @@ const useStyles = makeStyles(() => ({
   },
   
 }))
-
 
 function  App() {
   const classes = useStyles();

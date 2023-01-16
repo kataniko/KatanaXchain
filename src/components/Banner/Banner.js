@@ -3,6 +3,7 @@ import React from 'react'
 import Carousel from './Carousel';
 import { motion } from "framer-motion";
 
+//Inicio dos estilos do material UI
 
 const useStyles = makeStyles(() => ({
     banner: {
@@ -37,27 +38,16 @@ const useStyles = makeStyles(() => ({
 
 }));
 
+// Fim dos estilos Material Ui
+
 function Banner() {
     const classes = useStyles();
     return (
-        <motion.div initial={{
-            z: 0,
-            opacity: 0,
-            scale: 0.8,
-        }}
-        animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-        }}
-        
-        transition={{
-            duration: 1.5,
-        }} className={classes.banner}>
+        <motion.div initial={{z: 0,opacity: 0,scale: 0.8,}} animate={{ x: 0,opacity: 1,scale: 1,}} transition={{duration: 1.5,}} className={classes.banner}>
+            
             <Container className={classes.bannerContent}>
-                <motion.div
-                   
-                    className={classes.tagline}>
+                <motion.div className={classes.tagline}>
+                    
                     <Typography
                         variant="h1"
                         style={{
@@ -71,6 +61,7 @@ function Banner() {
                         KatanaXchain
 
                     </Typography>
+
                     <Typography
                         variant="subtitle1"
                         style={{
@@ -83,10 +74,16 @@ function Banner() {
                         >
                         Everything you need in one place
                     </Typography>
+
                 </motion.div>
+
+                {/* Carrossel */}
+
                 <motion.div>
                         <Carousel />
                 </motion.div>
+
+
             </Container>
         </motion.div>
     );
