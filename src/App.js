@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core';
 import {MoralisProvider} from 'react-moralis';
 
 
-
+// estilos do MUI
 
 const useStyles = makeStyles(() => ({
 
@@ -20,12 +20,15 @@ const useStyles = makeStyles(() => ({
   
 }))
 
+//
+
 function  App() {
+  //chamar os estilos criados
   const classes = useStyles();
 
   return (
-    <BrowserRouter >
-    <MoralisProvider
+    <BrowserRouter > {/* wrap para conseguir usar as routes através do Link  */}
+    <MoralisProvider /* wrap do moralis */
     serverUrl='https://gqasdf4tkkiu.usemoralis.com:2053/server'
     appId='TL0YJzCoVXgYv0fMKfzmgD52UaoaMllZI1DxTJWJ'
     >

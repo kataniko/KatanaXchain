@@ -1,6 +1,8 @@
 import { makeStyles } from "@material-ui/core";
 
 const SelectButton = ({ children, selected, onClick }) => {
+  
+  //estilos do MUI
   const useStyles = makeStyles({
     
     selectbutton: {
@@ -19,10 +21,11 @@ const SelectButton = ({ children, selected, onClick }) => {
         color: "black",
       },
       width: "22%",
+      boxShadow:"1px 2px 1px green"
     },
   });
 
-  const classes = useStyles();
+  const classes = useStyles(); //chamar os estilos criados
 
   return (
     <span onClick={onClick} className={classes.selectbutton}>

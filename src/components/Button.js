@@ -9,6 +9,8 @@ const Button = () => {
     user    
   }= useMoralis()
 
+  //autenticação
+  
   if(!isAuthenticated){
     return(
       <div >
@@ -26,11 +28,13 @@ const Button = () => {
                 fontFamily: "Prompt",
                 fontSize: "15px",
                 
+            
               }} onClick={authenticate}>Connect</button>
       </div>
     )
   }
   
+  // suposto retorno para a página com os dados da carteira
   return(
     <div>
       <p>{user.getUsername()}</p>
@@ -39,6 +43,8 @@ const Button = () => {
   )
 
 }
+
+
 
 export default Button
 

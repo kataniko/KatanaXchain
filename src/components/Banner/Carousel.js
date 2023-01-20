@@ -8,6 +8,7 @@ import { CryptoState } from "../../CryptoContext";
 
 
 
+//função formatar numeros
 
 export function numberWithCommas(x){
   return x.toString().replace().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -29,6 +30,8 @@ const Carousel = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency]);
 
+  //estilos MUI
+
   const useStyles = makeStyles((theme) => ({
     
     carousel: {
@@ -45,6 +48,9 @@ const Carousel = () => {
       color: "white",
     },
   }));
+  
+  
+//Conteudo do carrossel
 
   const classes = useStyles();
 
@@ -58,32 +64,31 @@ const Carousel = () => {
           src={coin?.image}
           alt={coin.name}
           height="80"
-          style={{ 
-            marginBottom: 10 }}
+          style={{ marginBottom: 10 }}
         />
+
         <span>
           {coin?.symbol}
           &nbsp;
           <span
-            style={{
-              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-              fontWeight: 500,
-            }}
-          >
-            {profit && "+"}
-            {coin?.price_change_percentage_24h?.toFixed(2)}%
+            style={{ color: profit > 0 ? "rgb(14, 203, 129)" : "red", fontWeight: 500,}} >
+            {profit && "+"} {coin?.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
 
         <span style={{fontSize: 22 , fontWeight: 500}}>
           {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
         </span>
+
       </Link>
+      
     );
   });
 
+  //Número de moedas .pixeis
+
   const responsive = {
-    0:{
+    128:{
       items: 2,
     },
     512: {
@@ -91,9 +96,14 @@ const Carousel = () => {
     },
   };
 
+  //chamar o carrossel
+
   return (
     <div className={classes.carousel}>
       <AliceCarousel
+
+       //definições do carrossel
+
         f
         infinite
         autoPlayInterval={1000}
@@ -103,8 +113,7 @@ const Carousel = () => {
         responsive={responsive}
         items={items}
         autoPlay
-        
-
+        mouseTracking
       />
     </div>
   );

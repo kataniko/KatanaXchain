@@ -27,7 +27,6 @@
     "web-vitals": "^1.0.1",
     "webpack": "^5.75.0"
   },
-  
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",

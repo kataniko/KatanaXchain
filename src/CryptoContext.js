@@ -4,17 +4,18 @@ const Crypto = createContext();
 
 
 const CryptoContext = ({ children }) => {
-   
+  //hook da currency e do simbolo 
   const [currency, setCurrency ] = useState("EUR");
   const [symbol, setSymbol ] = useState("€");
   
-  useEffect((teta) => {
+  //sempre que a currency for alterada , dá trigger a este useEffect que verifica e altera se necessário o simbolo consoante a currency
+  useEffect(() => {
     if (currency === "EUR") setSymbol("€");
     else if (currency === "USD") setSymbol("$");
   }, [currency]);
 
   return (
-    
+    //return dos valores para toda a app da currency , symbol e setcurrency .
     <Crypto.Provider value={{currency,symbol,setCurrency}}>
       {children}
     </Crypto.Provider>
