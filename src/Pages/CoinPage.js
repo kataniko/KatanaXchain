@@ -175,7 +175,7 @@ const CoinPage = () => {
         </div>
       </motion.div>
       
-      {/* gráfico chart.js */}
+      {/* gráfico */}
       <CoinInfo coin={coin} />
     
     </div>
