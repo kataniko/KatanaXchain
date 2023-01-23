@@ -176,6 +176,7 @@ const CoinPage = () => {
       </motion.div>
       
       {/* gráfico */}
+      
       <CoinInfo coin={coin} />
     
     </div>

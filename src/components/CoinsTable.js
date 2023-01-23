@@ -196,7 +196,7 @@ export default function CoinsTable() {
                     
                                                     </TableCell>
 
-                                                    {/* primeira célula da tabela - simbolo do contextAPI e a capitalização de mercado (retira 6 casas e adicionamos "M") */}
+                                                    {/* quarta célula da tabela - simbolo do contextAPI e a capitalização de mercado (retira 6 casas e adicionamos "M") */}
                                                     <TableCell align="right">
 
                                                         {symbol}{" "}{numberWithCommas(row.market_cap.toString().slice(0, -6))}M

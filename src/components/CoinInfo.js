@@ -119,7 +119,7 @@ const CoinInfo = ({ coin }) => {
 
                   let date = new Date(coin[0]);
 
-
+                  //varificação do para o botão 1 day . se for so um dia, retorna horas e minutos, senao retorna data 
                   let time = date.getHours() > 0
                     ? `${date.getHours()}:${date.getMinutes()}`
                     : `${date.getHours()}:${date.getMinutes()}`;
